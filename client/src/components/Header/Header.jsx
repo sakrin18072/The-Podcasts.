@@ -27,7 +27,7 @@ const Header = () => {
     }
   };
   const handleSearch = ()=>{
-    if(pod!=null){navigate(auth?.user.type===0?`/podcast/user/${pod}`:`/podcast/admin/${pod}`);window.location.reload()}
+    if(pod!=null){navigate(auth?.user?.role===0?`/podcast/user/${pod}`:`/podcast/admin/${pod}`);window.location.reload()}
   }
   useEffect(() => {
     fetchPodcasts();
