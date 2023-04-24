@@ -1,0 +1,39 @@
+.c0{
+  background-color: #2a2438;
+  color: white;
+}
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+.hhh:hover{
+  background-color: lightgray;
+}
+.c1{
+  background-color: #352f44;
+}
+.c2{
+background-color: #5c5470;
+}
+.c3{
+color: #dbd8e3;
+}
+.b1{
+color: #352f44 !important;
+
+}
+.b2{
+color: #5c5470 !important;
+}
+.b3{
+color: #dbd8e3 !important;
+}
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color:#5c5470  ;
+     color: #000;
+     }
