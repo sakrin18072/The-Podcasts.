@@ -7,6 +7,7 @@ import { AiOutlineLogout, AiOutlineLogin } from "react-icons/ai";
 import {FcLike} from 'react-icons/fc'
 import axios from "axios";
 import { Select } from "antd";
+import Login from "../Login";
 const { Option } = Select;
 const Header = () => {
   const navigate = useNavigate();

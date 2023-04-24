@@ -5,13 +5,14 @@ import { Outlet } from 'react-router-dom';
 import Login from '../Login';
 import Footer from '../Footer/Footer';
 import {useNavigate} from 'react-router-dom'
+import Spinner from '../Spinner';
 const PrivateRoute = () => {
     const [auth,setAuth] = useAuth();
     const navigate = useNavigate();
   return (
     <Layout>
         {
-            auth?.user?<Outlet/>:<Login/>
+            auth?.user?<Outlet/>:<Spinner/>
         }
       <div
         style={{
