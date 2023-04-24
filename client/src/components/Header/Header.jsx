@@ -79,7 +79,7 @@ const Header = () => {
               <Link
                 className="nav-link active text-light"
                 aria-current="page"
-                to="/podcasts"
+                to={auth?.user?`/dashboard/podcasts`:'/login'}
               >
                 Podcasts
               </Link>

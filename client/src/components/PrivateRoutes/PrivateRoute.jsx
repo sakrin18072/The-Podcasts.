@@ -4,9 +4,10 @@ import { useAuth } from '../../Contexts/AuthorizationContext';
 import { Outlet } from 'react-router-dom';
 import Login from '../Login';
 import Footer from '../Footer/Footer';
-
+import {useNavigate} from 'react-router-dom'
 const PrivateRoute = () => {
     const [auth,setAuth] = useAuth();
+    const navigate = useNavigate();
   return (
     <Layout>
         {

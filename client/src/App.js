@@ -41,12 +41,12 @@ function App() {
         <Route path='user/create-podcast' element={<CreateUserPodcast/>}/>
         <Route path='user/create-episode' element={<CreateUserEpisode/>}/>
         <Route path='user/podcasts' element={<MyPodcasts/>}/>
+        <Route path='podcasts' element = {<Podcast/>}/>
       </Route>
       <Route path='/podcast' element = {<PrivateRoute/>}>
         <Route path='admin/:pid' element={<PodcastDetail/>} />
         <Route path='user/:pid' element={<UserPodcastDetail/>} />
       </Route>
-      <Route path='/podcasts' element = {<Podcast/>}/>
     </Routes>
   );
 }

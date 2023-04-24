@@ -9,6 +9,7 @@ import { HiSpeakerWave } from 'react-icons/hi2'
 import { categories } from '../../constants/constants'
 import { Link } from 'react-router-dom'
 import Footer from '../Footer/Footer'
+import { useAuth } from '../../Contexts/AuthorizationContext'
 const AdminFavourites = () => {
   const [pods,setPods] = useState([]);
   const getFavs = async ()=>{
@@ -24,6 +25,7 @@ const AdminFavourites = () => {
       toast.error(error);
     }
   }
+  const [auth,setAuth] = useAuth();
   useEffect(()=>{getFavs()},[])
   return (
     <Layout>
@@ -39,7 +41,7 @@ const AdminFavourites = () => {
               }
               {pods?.map((pod) => {
                 return (
-                  <Link className="nav-link" to={`/podcast/admin/${pod._id}`}>
+                  <Link className="nav-link" to={auth?.user.role===1?`/podcast/admin/${pod._id}`:`/podcast/user/${pod._id}`}>
                     <div
                       className="card m-2 rounded shadow text-decoration-none c1"
                       style={{ width: "18rem" ,border:'0px'}}

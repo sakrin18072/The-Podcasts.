@@ -38,7 +38,7 @@ const UserFavourites = () => {
               }
               {pods?.map((pod) => {
                 return (
-                  <Link className="nav-link" to={`/podcast/admin/${pod._id}`}>
+                  <Link className="nav-link" to={`/podcast/user/${pod._id}`}>
                     <div
                       className="card m-2 rounded shadow text-decoration-none c1"
                       style={{ width: "18rem" ,border:'0px'}}
