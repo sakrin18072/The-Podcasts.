@@ -1,0 +1,50 @@
+import mongoose from "mongoose";
+const podcastModel = new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    desc:{
+        type:String,
+        required:true
+    },
+    category:{
+        type:Number,
+        required:true
+    },
+    type:{
+        type:Boolean,
+        required:true
+    },
+    speaker:{
+        type:String,
+        required:true
+    },
+    thumbnail:{
+        type:String,
+        required:true
+    },
+    isAdmin:{
+        type:Number,
+        default:0
+    },
+    uploadedBy:{
+        type:mongoose.Types.ObjectId,
+        ref:'userModel',
+        required:true
+    },
+    thumbName:{
+        type:String,
+        required:true
+    },
+    episodes:[{
+        type:mongoose.Types.ObjectId,
+        ref:'episodeModel'
+    }],
+    views:{
+        type:Number,
+        default:0
+    }
+})
+
+export default mongoose.model('podcastModel',podcastModel);
