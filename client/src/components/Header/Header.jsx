@@ -7,7 +7,6 @@ import { AiOutlineLogout, AiOutlineLogin } from "react-icons/ai";
 import {FcLike} from 'react-icons/fc'
 import axios from "axios";
 import { Select } from "antd";
-import Login from "../Login";
 const { Option } = Select;
 const Header = () => {
   const navigate = useNavigate();
@@ -46,7 +45,7 @@ const Header = () => {
     toast.success("Logout successful");
   };
   return (
-    <nav className="navbar navbar-default navbar-fixed-top navbar-expand-lg c0">
+    <nav className="navbar navbar-default navbar-expand-lg c0">
       <div className="container-fluid ">
         <Link className="navbar-brand fw-bold fs-3 text-light b1" to="/">
           The Podcasts.

@@ -32,15 +32,17 @@ const Home = () => {
   };
   useEffect(() => {
     fetchPodcasts();
+    
   }, []);
   return (
     <Layout>
+  
       <div className="container d-flex flex-column">
         <div
-          className="container margin-bottom d-flex flex-column flex-lg-row align-items-center"
+          className="container margin-bottom d-flex flex-column flex-lg-row align-items-stretch"
           style={{ marginBottom: "200px", marginTop: "60px" }}
         >
-          <div className="display-1 fw-bold text-center mb-5 b3 p-5" style={{backgroundColor:'#5c5470',borderRadius:'20px',borderTopRightRadius:'0',borderBottomRightRadius:'0'}}>
+          <div className="display-1 fw-bold text-center mb-5 b3 p-5" style={{backgroundColor:'#5c5470',borderRadius:'20px',borderTopRightRadius:'0',borderBottomRightRadius:'0',height:'100%'}}>
             The Heart Winner.&nbsp;&nbsp;
             {pods.length ? (
               <div className="fs-2 ms-auto" >
@@ -57,6 +59,15 @@ const Home = () => {
                 <p className="card-text b3 text-start">
                   <HiSpeakerWave /> {pods[0].speaker}
                 </p>
+                <Link to={
+                auth?.user?.role === 0
+                  ? `/podcast/user/${pods[0]?._id}`
+                  : `/podcast/admin/${pods[0]?._id}`
+              }>
+                <button className="btn b3 w-75"
+                 style={{backgroundColor:'#352f44',color:'#dbd8e3'}}
+                 >Play</button>
+                 </Link>
               </div>
             ) : (
               <></>
@@ -64,17 +75,11 @@ const Home = () => {
           </div>
 
           {pods.length ? (
-            <Link
-              className="nav-link"
-              to={
-                auth?.user?.type === 0
-                  ? `/podcast/user/${pods[0]?._id}`
-                  : `/podcast/admin/${pods[0]?._id}`
-              }
-            >
+            <div className="container">
               <img
-                className="d-block w-100 shadow"
+                className="d-block shadow card-img mb-5"
                 src={pods[0]?.thumbnail}
+                
                 style={{
                   height: "100%",
                   width: "auto",
@@ -82,10 +87,11 @@ const Home = () => {
                   borderTopLeftRadius:'0',
                   borderTopRightRadius:'20px',
                   borderBottomLeftRadius:'0'
+    
                 }}
                 alt="First slide"
               />
-            </Link>
+              </div>
           ) : (
             <></>
           )}
@@ -96,7 +102,7 @@ const Home = () => {
             return (
               <Link
                 to={
-                  auth?.user?.type === 0
+                  auth?.user?.role === 0
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }
