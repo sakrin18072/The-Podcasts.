@@ -65,7 +65,7 @@ const CreateEpisode = () => {
   };
   return (
     <Layout>
-      <div className="container-fluid">
+      <div className="container-fluid" style={{minHeight:'100vh'}}>
         <div className="row">
           <div className="col-12 col-lg-2 m-3">
             <AdminPanel />

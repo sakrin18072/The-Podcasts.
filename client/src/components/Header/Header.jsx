@@ -158,7 +158,7 @@ const Header = () => {
             <Link
                     className="nav-link active text-light"
                     aria-current="page"
-                    to={auth?.user?.type===0?`/dashboard/user/favourites`:`/dashboard/admin/favourites`}
+                    to={auth?.user?.role===0?`/dashboard/user/favourites`:`/dashboard/admin/favourites`}
                   >
                     <FcLike size={25}/> Favs
                   </Link>

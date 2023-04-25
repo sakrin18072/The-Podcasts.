@@ -115,7 +115,7 @@ const UserDashboard = () => {
   return (
     <Layout>
       <div >
-        <div className="d-flex flex-lg-row flex-column">
+        <div className="d-flex flex-lg-row flex-column" style={{minHeight:'100vh'}}>
           <div className=" m-3">
             <UserPanel />
           </div>

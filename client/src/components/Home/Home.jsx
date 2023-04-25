@@ -39,10 +39,10 @@ const Home = () => {
   
       <div className="container d-flex flex-column">
         <div
-          className="container margin-bottom d-flex flex-column flex-lg-row align-items-stretch"
+          className="container margin-bottom d-flex flex-column align-items-center mx-auto flex-lg-row align-items-stretch"
           style={{ marginBottom: "200px", marginTop: "60px" }}
         >
-          <div className="display-1 fw-bold text-center mb-5 b3 p-5" style={{backgroundColor:'#5c5470',borderRadius:'20px',borderTopRightRadius:'0',borderBottomRightRadius:'0',height:'100%'}}>
+          <div className="display-1 fw-bold text-center mb-5 b3 p-5 mx-auto" style={{backgroundColor:'#5c5470',borderRadius:'20px',borderTopRightRadius:'0',borderBottomRightRadius:'0',height:'100%'}}>
             The Heart Winner.&nbsp;&nbsp;
             {pods.length ? (
               <div className="fs-2 ms-auto" >

@@ -151,7 +151,7 @@ const UserPodcastDetail = () => {
             <div className="container c0">
               <h6 className="fw-bolder c0 b3">Podcast</h6>
               <h1 className="fs-1 fw-bolder c0 b3">{podcast.name}</h1>
-              <h4 className="fw-bolder c0 b3">{auth?.user?.name}</h4>
+              <h4 className="fw-bolder c0 b3">The Podcasts.</h4>
               {
                 !likes.find(i=>i._id===pid) ?
                 <button className="btn btn-dark b2 w-25" style={{ backgroundColor: "#dbd8e3", border: "0" }} onClick={(e)=>{
@@ -323,7 +323,17 @@ const UserPodcastDetail = () => {
           </div>
         </div>
       </div>
-      
+      <div
+        style={{
+          position: "static",
+          bottom: "0",
+          width: "100vw",
+          margin:'0'
+        }}
+        className="c0"
+      >
+        <Footer />
+      </div>
     </Layout>
   );
 };

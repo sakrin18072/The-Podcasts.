@@ -29,7 +29,7 @@ const AdminFavourites = () => {
   useEffect(()=>{getFavs()},[])
   return (
     <Layout>
-        <div className="container-fluid" style={{marginTop:'-100px'}}>
+        <div className="container-fluid" style={{marginTop:'-100px',minHeight:'100vh'}}>
         <div className="row">
           <div className="col-12 col-lg-2 m-3">
             <AdminPanel/>

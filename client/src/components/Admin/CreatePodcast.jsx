@@ -52,7 +52,7 @@ const CreatePodcast = () => {
   };
   return (
     <Layout>
-      <div className="container-fluid mb-5" style={{ minHeight: "80vh" }}>
+      <div className="container-fluid " style={{ minHeight: "100vh" }}>
         <div className="row">
           <div className="col-12 col-lg-2 col-md-5 m-3">
             <AdminPanel />

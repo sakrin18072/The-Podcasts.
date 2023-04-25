@@ -117,7 +117,7 @@ const AdminDashboard = () => {
     <Layout>
       <div className="">
         <div className="d-flex flex-lg-row flex-column">
-          <div className=" m-3">
+          <div className=" p-3">
             <AdminPanel />
           </div>
           <div className="col-9 b3 mx-auto p-3 class-2">
@@ -173,8 +173,11 @@ const AdminDashboard = () => {
                   </div>
                 );
               })}
+              
             </div>
+            
           </div>
+          
           <>
             <Modal show={show} onHide={handleClose} >
               <Modal.Header className="c1 b3" closeButton>
@@ -273,17 +276,7 @@ const AdminDashboard = () => {
           </>
         </div>
       </div>
-      <div
-        style={{
-          position: "static",
-          bottom: "0",
-          width: "100vw",
-          margin:'-50px'
-        }}
-        className="c0"
-      >
-        <Footer />
-      </div>
+      
     </Layout>
   );
 };
