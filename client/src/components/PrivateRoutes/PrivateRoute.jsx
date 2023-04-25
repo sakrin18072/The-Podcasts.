@@ -10,7 +10,7 @@ const PrivateRoute = () => {
     const [auth,setAuth] = useAuth();
     const navigate = useNavigate();
   return (
-    <Layout>
+    <div>
         {
             auth?.user?<Outlet/>:<Spinner/>
         }
@@ -25,7 +25,7 @@ const PrivateRoute = () => {
       >
         <Footer />
       </div>
-    </Layout>
+    </div>
   )
 }
 
