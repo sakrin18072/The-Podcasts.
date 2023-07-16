@@ -42,6 +42,7 @@ const UserPodcastDetail = () => {
       const {data} = await axios.post('/api/v1/podcast/set-like',{id});
       if(data?.success){
         getFavs();
+        window.location.reload();
       }
       else{
         toast.error(data?.message);
@@ -123,12 +124,9 @@ const UserPodcastDetail = () => {
   return (
     <Layout>
       <div
-        className="d-flex flex-md-row flex-column b3"
+        className="d-flex flex-md-row flex-column b3 container"
         style={{ flexBasis: "20%" }}
       >
-        <div className="flex-no-wrap m-3" style={{ minWidth: "15%" }}>
-          <UserPanel />
-        </div>
         <div
           className=" m-3 rounded flex-lg-row flex-col "
           style={{ flexGrow: "2" }}
@@ -165,7 +163,7 @@ const UserPodcastDetail = () => {
               }
             </div>
           </div>
-          <div className="mt-3  d-flex rounded flex-lg-row flex-column-reverse">
+          <div className="container mt-3  d-flex rounded flex-lg-row flex-column-reverse">
             <div className="container rounded ">
               <h1>All Episodes</h1>
               {podcast?.episodes?.map((ep) => {
@@ -190,7 +188,7 @@ const UserPodcastDetail = () => {
                           <audio
                             src={ep.episode}
                             controls
-                            className="c3 b0 "
+                            className="border"
                             style={{
                               borderRadius: "20px",
                               backgroundColor: "#5c5470",

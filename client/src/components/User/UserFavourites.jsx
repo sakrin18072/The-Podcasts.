@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
 import UserPanel from './UserPanel'
 import axios from 'axios'
@@ -8,7 +8,8 @@ import { TbCategory } from 'react-icons/tb'
 import { categories } from '../../constants/constants'
 import { HiSpeakerWave } from 'react-icons/hi2'
 import { Link } from 'react-router-dom'
-import Footer from '../Footer/Footer'
+
+
 const UserFavourites = () => {
     const [pods,setPods] = useState([]);
     const getFavs = async ()=>{
@@ -24,15 +25,15 @@ const UserFavourites = () => {
           toast.error(error);
         }
       }
+    useEffect(()=>{
+        getFavs();
+    },[]);
   return (
     <Layout>
-        <div className="container-fluid" style={{marginTop:'-100px',minHeight:'100vh'}}>
-        <div className="row">
-          <div className="col-12 col-lg-2 m-3">
-            <UserPanel/>
-          </div>
-          <div className="col-12 col-lg-8 m-3">
-          <div className=" container d-flex flex-wrap justify-content-around">
+        <div className="container" style={{marginTop:'-100px',minHeight:'100vh'}}>
+        <div className="">
+          <div className="">
+          <div className=" container d-flex flex-wrap justify-content-center mt-3">
               {
                 pods.length===0 && <h1 className='b3 display-1 fw-bolder'>You haven't added any yet, go search for one :)</h1>
               }

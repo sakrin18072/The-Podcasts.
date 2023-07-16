@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
-import Carousel from "react-bootstrap/Carousel";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -9,7 +8,6 @@ import { MdContentPaste } from "react-icons/md";
 import { TbCategory } from "react-icons/tb";
 import { categories } from "../../constants/constants";
 import { HiSpeakerWave } from "react-icons/hi2";
-import {BiRename} from 'react-icons/bi'
 import Footer from "../Footer/Footer";
 const Home = () => {
   const [pods, setPods] = useState([]);
@@ -37,65 +35,7 @@ const Home = () => {
   return (
     <Layout>
   
-      <div className="container d-flex flex-column">
-        <div
-          className="container margin-bottom d-flex flex-column align-items-center mx-auto flex-lg-row align-items-stretch"
-          style={{ marginBottom: "200px", marginTop: "60px" }}
-        >
-          <div className="display-1 fw-bold text-center mb-5 b3 p-5 mx-auto" style={{backgroundColor:'#5c5470',borderRadius:'20px',borderTopRightRadius:'0',borderBottomRightRadius:'0',height:'100%'}}>
-            The Heart Winner.&nbsp;&nbsp;
-            {pods.length ? (
-              <div className="fs-2 ms-auto" >
-                <p className="card-text b3 text-start">
-                <BiRename/> {pods[0].name}
-                </p>
-                <p className="card-text b3 text-start">
-                  <MdContentPaste />{" "}
-                  {pods[0].type === false ? "Audio" : "Video"}
-                </p>
-                <p className="card-text b3 text-start">
-                  <TbCategory /> {categories[pods[0].category]}
-                </p>
-                <p className="card-text b3 text-start">
-                  <HiSpeakerWave /> {pods[0].speaker}
-                </p>
-                <Link to={
-                auth?.user?.role === 0
-                  ? `/podcast/user/${pods[0]?._id}`
-                  : `/podcast/admin/${pods[0]?._id}`
-              }>
-                <button className="btn b3 w-75"
-                 style={{backgroundColor:'#352f44',color:'#dbd8e3'}}
-                 >Play</button>
-                 </Link>
-              </div>
-            ) : (
-              <></>
-            )}
-          </div>
-
-          {pods.length ? (
-            <div className="container">
-              <img
-                className="d-block shadow card-img mb-5"
-                src={pods[0]?.thumbnail}
-                
-                style={{
-                  height: "100%",
-                  width: "auto",
-                  borderRadius: "20px",
-                  borderTopLeftRadius:'0',
-                  borderTopRightRadius:'20px',
-                  borderBottomLeftRadius:'0'
-    
-                }}
-                alt="First slide"
-              />
-              </div>
-          ) : (
-            <></>
-          )}
-        </div>
+      <div className="d-flex flex-column mx-auto container">
         <h1 className="text-center display-1 fw-bold b3">The OG's</h1>
         <div className=" container d-flex flex-wrap justify-content-around">
           {pods?.slice(0, 8)?.map((pod) => {
@@ -148,7 +88,7 @@ const Home = () => {
             return (
               <Link
                 to={
-                  auth?.user?.type === 0
+                  auth?.user?.role === 0
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }
@@ -194,7 +134,7 @@ const Home = () => {
             return (
               <Link
                 to={
-                  auth?.user?.type === 0
+                  auth?.user?.role === 0
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }

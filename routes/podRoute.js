@@ -21,10 +21,10 @@ router.delete("/delete-podcast/:pid", requireSignIn, deletePodcastController);
 router.post("/create-podcast", requireSignIn, createPodcastController);
 router.get("/get-all-podcasts", getAllPodcastsController);
 router.put("/update-podcast", requireSignIn, updatePodcastController);
-router.get("/get-podcast/:pid", requireSignIn, getPodcastController);
+router.get("/get-podcast/:pid",  getPodcastController);
 router.get("/get-podcasts-by-id", requireSignIn, getPodcastsByIDController);
 router.post("/create-episode", requireSignIn, createEpisodeController);
-router.post("/get-episode", requireSignIn, fetchEpisodeController);
+router.post("/get-episode", fetchEpisodeController);
 router.put("/update-episode", requireSignIn, updateEpisodeController);
 router.delete(
   "/delete-episode/:pid/:id",
