@@ -57,9 +57,9 @@ const UserFavourites = () => {
                         <p className="card-text c2 b3">
                           {pod.desc.substr(0, 40) + "..."}
                         </p>
-                        <p className="card-text b3 c2"><MdContentPaste/> {pod.type===false?"Audio":"Video"}</p>
-                      <p className="card-text b3 c2"><TbCategory/> {categories[pod.category]}</p>
-                      <p className="card-text b3 c2"><HiSpeakerWave/> {pod.speaker}</p>
+                        <p className="card-text b3 c2 flex"><MdContentPaste className='my-auto mr-1'/> {pod.type===false?"Audio":"Video"}</p>
+                      <p className="card-text b3 c2 flex"><TbCategory className='my-auto mr-1'/> {categories[pod.category]}</p>
+                      <p className="card-text b3 c2 flex"><HiSpeakerWave className='my-auto mr-1'/> {pod.speaker}</p>
                       </div>
                     </div>
                   </Link>

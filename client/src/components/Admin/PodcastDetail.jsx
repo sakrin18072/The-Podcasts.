@@ -325,17 +325,7 @@ const PodcastDetail = () => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          position: "static",
-          bottom: "0",
-          width: "100vw",
-          margin:'0'
-        }}
-        className="c0"
-      >
-        <Footer />
-      </div>
+      
     </Layout>
   );
 };

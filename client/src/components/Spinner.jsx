@@ -1,3 +1,4 @@
+import { Layout } from 'antd';
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 const Spinner = ({path = "login", loc = "login page"}) => {
@@ -20,12 +21,13 @@ const Spinner = ({path = "login", loc = "login page"}) => {
         });
     }
     return (
-
+        <Layout>
         <div className="d-flex flex-column justify-content-center align-items-center b3" style={{ minHeight: '97vh' }}>
             <div className="text-center m-3">Redirecting you to {loc} in {timer} seconds&nbsp;</div>
             <div className="spinner-border" role="status" />
 
         </div>
+        </Layout>
 
     )
 }

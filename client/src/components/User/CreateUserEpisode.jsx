@@ -153,15 +153,7 @@ const CreateUserEpisode = () => {
                     >
                       Create Episode
                     </button>
-                    {/* <p>Or</p>
-
-              <Link
-                class="btn btn-lg btn-google btn-block text-light border w-100"
-                onClick={loginWithGoogle}
-              >
-                <img src="https://img.icons8.com/color/16/000000/google-logo.png" />{" "}
-                Signin Using Google
-              </Link> */}
+                    
                   </div>
                 </form>
               </div>

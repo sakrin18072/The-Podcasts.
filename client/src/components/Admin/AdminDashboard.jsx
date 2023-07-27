@@ -116,21 +116,21 @@ const AdminDashboard = () => {
   return (
     <Layout>
       <div className="">
-        <div className="d-flex flex-lg-row flex-column">
+        <div className="flex flex-lg-row flex-column">
           <div className=" p-3">
             <AdminPanel />
           </div>
           <div className="col-9 b3 mx-auto p-3 class-2">
-            <h4 className="fw-bold b3">
-              <RiAdminLine style={{color:'#dbd8e3'}} size={25} /> {auth?.user?.name}
+            <h4 className="fw-bold b3 flex">
+              <RiAdminLine className="mr-1" style={{color:'#dbd8e3'}} size={25} /> {auth?.user?.name}
             </h4>
-            <h5>
-              <FaPodcast /> Podcasts online.
+            <h5 className="flex">
+              <FaPodcast className="mr-1" /> Podcasts online.
             </h5>
             <div className=" container d-flex flex-wrap p-5">
               {pods?.map((pod) => {
                 return (
-                  <div className="card m-2 rounded shadow c2 b0" style={{ width: "18rem" ,border:'0'}}>
+                  <div className="card m-2 rounded shadow c2 b0 hover:scale-105 transition" style={{ width: "18rem" ,border:'0'}}>
                     <img
                       src={pod?.thumbnail}
                       className="card-img-top p-2 c2"
@@ -142,9 +142,9 @@ const AdminDashboard = () => {
                         {pod.name.substr(0, 20) + "..."}
                       </h5>
                       <p className="card-text b3 c2">{pod.desc.substr(0,40)+"..."}</p>
-                      <p className="card-text b3 c2"><MdContentPaste/> {pod.type===false?"Audio":"Video"}</p>
-                      <p className="card-text b3 c2"><TbCategory/> {categories[pod.category]}</p>
-                      <p className="card-text b3 c2"><HiSpeakerWave/> {pod.speaker}</p>
+                      <p className="card-text b3 c2 flex"><MdContentPaste className="my-auto mr-1"/> {pod.type===false?"Audio":"Video"}</p>
+                      <p className="card-text b3 c2 flex"><TbCategory className="my-auto mr-1"/> {categories[pod.category]}</p>
+                      <p className="card-text b3 c2 flex"><HiSpeakerWave className="my-auto mr-1"/> {pod.speaker}</p>
                       <div className="container d-flex justify-content-around">
                         <Link
                           onClick={(e) => {

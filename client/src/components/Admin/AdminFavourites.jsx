@@ -29,7 +29,7 @@ const AdminFavourites = () => {
   useEffect(()=>{getFavs()},[])
   return (
     <Layout>
-        <div className="container-fluid" style={{marginTop:'-100px',minHeight:'100vh'}}>
+        <div className="container-fluid" style={{minHeight:'100vh'}}>
         <div className="row">
           <div className="col-12 col-lg-2 m-3">
             <AdminPanel/>
@@ -43,7 +43,7 @@ const AdminFavourites = () => {
                 return (
                   <Link className="nav-link" to={auth?.user.role===1?`/podcast/admin/${pod._id}`:`/podcast/user/${pod._id}`}>
                     <div
-                      className="card m-2 rounded shadow text-decoration-none c1"
+                      className="card m-2 rounded shadow text-decoration-none c1 hover:scale-105 transition"
                       style={{ width: "18rem" ,border:'0px'}}
                     >
                       <img
@@ -59,9 +59,9 @@ const AdminFavourites = () => {
                         <p className="card-text c2 b3">
                           {pod.desc.substr(0, 40) + "..."}
                         </p>
-                        <p className="card-text b3 c2"><MdContentPaste/> {pod.type===false?"Audio":"Video"}</p>
-                      <p className="card-text b3 c2"><TbCategory/> {categories[pod.category]}</p>
-                      <p className="card-text b3 c2"><HiSpeakerWave/> {pod.speaker}</p>
+                        <p className="card-text b3 c2 flex"><MdContentPaste className='my-auto mr-1'/> {pod.type===false?"Audio":"Video"}</p>
+                      <p className="card-text b3 c2 flex"><TbCategory className='my-auto mr-1'/> {categories[pod.category]}</p>
+                      <p className="card-text b3 c2 flex"><HiSpeakerWave className='my-auto mr-1'/> {pod.speaker}</p>
                       </div>
                     </div>
                   </Link>
@@ -72,17 +72,7 @@ const AdminFavourites = () => {
           </div>
         
       </div>
-      <div
-        style={{
-          position: "static",
-          bottom: "0",
-          width: "100vw",
-          margin:'0'
-        }}
-        className="c0"
-      >
-        <Footer />
-      </div>
+      
     </Layout>
   )
 }

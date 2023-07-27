@@ -46,11 +46,11 @@ const Home = () => {
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }
-                className="nav-link"
+                className="nav-link "
                 style={{ borderRadius: "20px" }}
               >
                 <div
-                  className="card m-2 rounded shadow b0 c2"
+                  className="card m-2 rounded shadow b0 c2 hover:scale-105 transition"
                   style={{ width: "18rem", border: "0", borderRadius: "20px" }}
                 >
                   <img
@@ -66,15 +66,15 @@ const Home = () => {
                     <p className="card-text c3">
                       {pod.desc.substr(0, 40) + "..."}
                     </p>
-                    <p className="card-text b3 c2">
-                      <MdContentPaste />{" "}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <MdContentPaste className="my-auto mr-1" />{" "}
                       {pod.type === false ? "Audio" : "Video"}
                     </p>
-                    <p className="card-text b3 c2">
-                      <TbCategory /> {categories[pod.category]}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <TbCategory className="my-auto mr-1"/> {categories[pod.category]}
                     </p>
-                    <p className="card-text b3 c2">
-                      <HiSpeakerWave /> {pod.speaker}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <HiSpeakerWave className="my-auto mr-1"/> {pod.speaker}
                     </p>
                   </div>
                 </div>
@@ -92,11 +92,11 @@ const Home = () => {
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }
-                className="nav-link"
+                className="nav-link "
                 style={{ borderRadius: "20px" }}
               >
                 <div
-                  className="card m-2 rounded shadow b0 c2"
+                  className="card m-2 rounded shadow b0 c2 hover:scale-105 transition"
                   style={{ width: "18rem", border: "0", borderRadius: "20px" }}
                 >
                   <img
@@ -112,15 +112,15 @@ const Home = () => {
                     <p className="card-text c3">
                       {pod.desc.substr(0, 40) + "..."}
                     </p>
-                    <p className="card-text b3 c2">
-                      <MdContentPaste />{" "}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <MdContentPaste className="my-auto mr-1"/>{" "}
                       {pod.type === false ? "Audio" : "Video"}
                     </p>
-                    <p className="card-text b3 c2">
-                      <TbCategory /> {categories[pod.category]}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <TbCategory className="my-auto mr-1"/> {categories[pod.category]}
                     </p>
-                    <p className="card-text b3 c2">
-                      <HiSpeakerWave /> {pod.speaker}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <HiSpeakerWave className="my-auto mr-1"/> {pod.speaker}
                     </p>
                   </div>
                 </div>
@@ -138,11 +138,11 @@ const Home = () => {
                     ? `/podcast/user/${pod._id}`
                     : `/podcast/admin/${pod._id}`
                 }
-                className="nav-link"
+                className="nav-link hover:scale-105 transition"
                 style={{ borderRadius: "20px" }}
               >
                 <div
-                  className="card m-2 rounded shadow b0 c2"
+                  className="card m-2 rounded shadow b0 c2 hover:scale-105 transition"
                   style={{ width: "18rem", border: "0", borderRadius: "20px" }}
                 >
                   <img
@@ -158,15 +158,15 @@ const Home = () => {
                     <p className="card-text c3">
                       {pod.desc.substr(0, 40) + "..."}
                     </p>
-                    <p className="card-text b3 c2">
-                      <MdContentPaste />{" "}
+                    <p className="card-text b3 c2 flex min-w-fit ">
+                      <MdContentPaste className="my-auto mr-1"/>{" "}
                       {pod.type === false ? "Audio" : "Video"}
                     </p>
-                    <p className="card-text b3 c2">
-                      <TbCategory /> {categories[pod.category]}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <TbCategory className="my-auto mr-1"/> {categories[pod.category]}
                     </p>
-                    <p className="card-text b3 c2">
-                      <HiSpeakerWave /> {pod.speaker}
+                    <p className="card-text b3 c2 flex min-w-fit">
+                      <HiSpeakerWave className="my-auto mr-1"/> {pod.speaker}
                     </p>
                   </div>
                 </div>
@@ -175,17 +175,7 @@ const Home = () => {
           })}
         </div>
       </div>
-        <div
-        style={{
-          position: "static",
-          bottom: "0",
-          width: "100vw",
-          margin:'0'
-        }}
-        className="c0"
-      >
-        <Footer />
-      </div>
+       
 
     </Layout>
   );

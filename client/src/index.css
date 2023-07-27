@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .c0{
   background-color: #2a2438;
   color: white;

@@ -8,7 +8,7 @@ injectStyle();
 const Layout = ({ children }) => {
   window.scrollTo(0, 0);
   return (
-    <div>
+    <div class="backdrop-filter bg-opacity-0 backdrop-blur-3xl c0">
       
         <Header />
       
@@ -22,12 +22,12 @@ const Layout = ({ children }) => {
         theme="dark"
       />
       <div
-        style={{ paddingTop: "100px", minHeight: "80vh" }}
-        className="c1"
+        // style={{ paddingTop: "100px", minHeight: "80vh" }}
+        className="c1 w-full"
       >
         {children}
       </div>
-      {/* <div
+      <div
         style={{
           position: "static",
           bottom: "0",
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
         className="c0"
       >
         <Footer />
-      </div> */}
+      </div> 
     </div>
   );
 };

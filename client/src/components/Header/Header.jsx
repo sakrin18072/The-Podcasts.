@@ -45,39 +45,28 @@ const Header = () => {
     toast.success("Logout successful");
   };
   return (
-    <nav className="navbar navbar-default navbar-expand-lg c0">
-      <div className="container-fluid ">
+    <nav className="p-3 sticky top-0 z-50 w-full backdrop-filter backdrop-blur-3xl bg-opacity-0 flex justify-between">
+      
         <Link className="navbar-brand fw-bold fs-3 text-light b1" to="/">
           The Podcasts.
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
         <div
-          className="collapse navbar-collapse text-light"
+          className="hidden lg:flex text-light"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
-            <li className="nav-item me-5">
+          <ul className="flex flex-row navbar-nav mx-auto mb-2 mb-lg-0 ">
+            <li className="my-auto me-5">
               <Link
-                className="nav-link active text-light"
+                className="flex min-w-fit no-underline text-light"
                 aria-current="page"
                 to="/"
               >
                 Home
               </Link>
             </li>
-            <li className="nav-item me-5">
+            <li className="my-auto me-5">
               <Link
-                className="nav-link active text-light"
+                className="flex min-w-fit no-underline text-light"
                 aria-current="page"
                 to={auth?.user?`/dashboard/podcasts`:'/login'}
               >
@@ -86,19 +75,19 @@ const Header = () => {
             </li>
             {!auth?.user ? (
               <>
-                <li className="nav-item me-5">
+                <li className="my-auto me-5">
                   <Link
-                    className="nav-link active text-light"
+                    className="flex min-w-fit no-underline text-light "
                     aria-current="page"
                     to="/login"
                   >
                     Login&nbsp;
-                    <AiOutlineLogin />
+                    <AiOutlineLogin className="my-auto"/>
                   </Link>
                 </li>
-                <li className="nav-item me-5">
+                <li className="my-auto me-5">
                   <Link
-                    className="nav-link active text-light"
+                    className="flex min-w-fit no-underline text-light"
                     aria-current="page"
                     to="/register"
                   >
@@ -108,9 +97,9 @@ const Header = () => {
               </>
             ) : (
               <>
-                <li className="nav-item me-5">
+                <li className="my-auto me-5">
                   <Link
-                    className="nav-link active text-light"
+                    className="flex min-w-fit no-underline text-light"
                     aria-current="page"
                     onClick={(e) => {
                       e.preventDefault();
@@ -119,13 +108,13 @@ const Header = () => {
                     to="/"
                   >
                     Logout&nbsp;
-                    <AiOutlineLogout />
+                    <AiOutlineLogout className="my-auto"/>
                   </Link>
                 </li>
 
-                <li className="nav-item me-5">
+                <li className="my-auto me-5">
                   <Link
-                    className="nav-link active text-light"
+                    className="flex min-w-fit no-underline text-light"
                     to={`/dashboard/${
                       auth?.user?.role === 0 ? "user" : "admin"
                     }`}
@@ -135,7 +124,7 @@ const Header = () => {
                 </li>
               </>
             )}
-            <li className="nav-item ms-auto">
+            <li className="my-auto ms-auto">
               <Select
                 bordered={false}
                 optionFilterProp="key"
@@ -144,28 +133,28 @@ const Header = () => {
                 style={{ width: "300px",backgroundColor:'#5c5470',color:'#dbd8e3',margin:'0px' }}
                 showSearch
                 showArrow={false}
-                className="form-select"
+                className="form-select border-0"
                 onChange={(value) => {setPod(value)}}
               >
                 {pods?.map((cat) => (
-                  <Option key={cat.name} value={cat._id} style={{backgroundColor:'#5c5470',color:'#dbd8e3', margin:'0px',borderRadius:'0px'}}>
+                  <Option key={cat.name} value={cat._id} className=" m-0 border-0 text-black" style={{color:'#dbd8e3', margin:'0px',borderRadius:'0px'}}>
                     {cat.name}
                   </Option>
                 ))}
               </Select>
             </li>
-            <li className="nav-item me-auto ms-4">
+            <li className="my-auto me-auto ms-4">
             <Link
-                    className="nav-link active text-light"
+                    className="flex min-w-fit no-underline text-light"
                     aria-current="page"
                     to={auth?.user?.role===0?`/dashboard/user/favourites`:`/dashboard/admin/favourites`}
                   >
-                    <FcLike size={25}/> Favs
+                    <FcLike size={25}/>&nbsp; Favs
                   </Link>
             </li>
           </ul>
         </div>
-      </div>
+      
     </nav>
   );
 };
